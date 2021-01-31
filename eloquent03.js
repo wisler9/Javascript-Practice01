@@ -37,6 +37,7 @@ if (true) {
 console.log(x + z);
 
 // ------------------------------------------------------
+// function expression
 
 const halve = function(n) {
     return n / 2;
@@ -65,3 +66,40 @@ const hummus = function(factor) {
     ingredient(0.5, "teaspoon", "cumin");
 };
 console.log(hummus(1));
+
+
+// ------------------------------------------------------
+// function declaration can be hoisted 
+
+console.log("The future says: ", future());
+
+function future() {
+    return "You'll never have flying cars.";
+}
+
+
+// ------------------------------------------------------
+// arrow function
+
+const power2 = (base, exponent) => {
+    let result = 1;
+    for (let count = 0; count < exponent; count++) {
+        result *=  base;
+    }
+    return result;
+};
+
+console.log(power2(3,5));
+
+
+// ------------------------------------------------------
+// Call stack
+
+function chicken() {
+    return egg();
+}
+function egg() {
+    return chicken();
+}
+
+// console.log(chicken(), "came first.");
